@@ -8,6 +8,7 @@ public class OfficeDataManager : MonoBehaviour
 {
     [SerializeField] private string serviceKey;
     [SerializeField] private OfficeCellController officeCellPrefab;
+    [SerializeField] private MoreButtonCellController moreButtonPrefab;
     [SerializeField] private Transform content;
 
     private void Start()
@@ -15,7 +16,7 @@ public class OfficeDataManager : MonoBehaviour
         StartCoroutine(LoadData(0));
     }
 
-    IEnumerator LoadData(int page)
+    IEnumerator LoadData(int page, GameObject previousMoreButton = null)
     {
         // 서버 URL 설정
         string url = string.Format("{0}?page={1}&perPage={2}&serviceKey={3}",
@@ -42,6 +43,21 @@ public class OfficeDataManager : MonoBehaviour
                     OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
                     officeCellController.SetData(officeArray[i].사무소명,
                         officeArray[i].영업구분, officeArray[i].전화번호);
+                }
+
+                // More Button 제거
+                if (previousMoreButton != null) Destroy(previousMoreButton);
+
+                // More Button 추가
+                int currentTotalCount = officeData.perPage * (officeData.page - 1) + officeData.currentCount;
+
+                if (currentTotalCount < officeData.totalCount)
+                {
+                    MoreButtonCellController moreButtonCellController = Instantiate(moreButtonPrefab, content);
+                    moreButtonCellController.loadMoreData = () =>
+                    {
+                        StartCoroutine(LoadData(officeData.page + 1, moreButtonCellController.gameObject));
+                    };
                 }
             }
         }

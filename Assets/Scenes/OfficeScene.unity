@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 30
   m_Viewport: {fileID: 2056303106}
   m_HorizontalScrollbar: {fileID: 948592967}
   m_VerticalScrollbar: {fileID: 1346815397}
@@ -529,8 +529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f889a3ecfe4ada4468d36257eb1e1b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serviceKey: 
+  serviceKey: xAluuAL0vskgBaI6tYQN9an2CquRrYAik%2B3ztczOtUm5KOKIvtG3zkBIg40Usdtfu50En663WHX%2BkiMMkMC6eQ%3D%3D
   officeCellPrefab: {fileID: 2727189063503630777, guid: d01ce37892a4b85419b117ac30c00f8d, type: 3}
+  moreButtonPrefab: {fileID: 6012318927262099160, guid: 155e6350d5ed8e84195a4381601bfe6b, type: 3}
   content: {fileID: 1585954859}
 --- !u!4 &267049586
 Transform:
