@@ -4,12 +4,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class OfficeDataManager : MonoBehaviour
+public class OfficeDataManager : MonoBehaviour, ICellDelegate
 {
     [SerializeField] private string serviceKey;
     [SerializeField] private OfficeCellController officeCellPrefab;
     [SerializeField] private MoreButtonCellController moreButtonPrefab;
+    [SerializeField] private DetailPanelController detailPanelPrefab;
     [SerializeField] private Transform content;
+    [SerializeField] private Transform canvas;
+
+    // 불러온 모든 Office 리스트
+    private List<Office> officeList = new List<Office>();
 
     private void Start()
     {
@@ -40,9 +45,14 @@ public class OfficeDataManager : MonoBehaviour
 
                 for (int i = 0; i < officeArray.Length; i++)
                 {
+                    officeList.Add(officeArray[i]);
+
                     OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
                     officeCellController.SetData(officeArray[i].사무소명,
-                        officeArray[i].영업구분, officeArray[i].전화번호);
+                        officeArray[i].영업구분, officeArray[i].전화번호,
+                        officeList.Count - 1);
+
+                    officeCellController.cellDelegate = this;
                 }
 
                 // More Button 제거
@@ -61,5 +71,11 @@ public class OfficeDataManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void OnClickCell(int index)
+    {
+        DetailPanelController detailPanelController = Instantiate(detailPanelPrefab, canvas);
+        detailPanelController.SetData(officeList[index]);
     }
 }

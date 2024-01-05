@@ -532,7 +532,9 @@ MonoBehaviour:
   serviceKey: xAluuAL0vskgBaI6tYQN9an2CquRrYAik%2B3ztczOtUm5KOKIvtG3zkBIg40Usdtfu50En663WHX%2BkiMMkMC6eQ%3D%3D
   officeCellPrefab: {fileID: 2727189063503630777, guid: d01ce37892a4b85419b117ac30c00f8d, type: 3}
   moreButtonPrefab: {fileID: 6012318927262099160, guid: 155e6350d5ed8e84195a4381601bfe6b, type: 3}
+  detailPanelPrefab: {fileID: 4975166248821115765, guid: 6e903e7df628dde49b5bae5d2cbbb932, type: 3}
   content: {fileID: 1585954859}
+  canvas: {fileID: 154548631}
 --- !u!4 &267049586
 Transform:
   m_ObjectHideFlags: 0
