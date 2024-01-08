@@ -3158,7 +3158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB3C4\uB85C\uBA85 \uC8FC\uC18C"
+  m_text: "\uC804\uD654\uBC88\uD638"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51fa2ac26b7a4014daaea773c6fd64d1, type: 2}
   m_sharedMaterial: {fileID: 654607711263916038, guid: 51fa2ac26b7a4014daaea773c6fd64d1, type: 2}
@@ -3672,14 +3672,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 28
   m_CharacterLimit: 0
@@ -4884,7 +4884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC804\uD654\uBC88\uD638"
+  m_text: "\uC601\uC5C5\uAD6C\uBD84"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51fa2ac26b7a4014daaea773c6fd64d1, type: 2}
   m_sharedMaterial: {fileID: 654607711263916038, guid: 51fa2ac26b7a4014daaea773c6fd64d1, type: 2}

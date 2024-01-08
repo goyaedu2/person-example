@@ -86,5 +86,62 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
     public void OnClickAddButton()
     {
         CreatePanelController createPanelController = Instantiate(createPanelPrefab, canvas);
+        
+        //createPanelController.createData = new CreateData(saveData);
+
+        //createPanelController.createData = (office) =>
+        //{
+        //    officeList.Add(office);
+
+        //    OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
+        //    officeCellController.SetData(office.사무소명,
+        //        office.영업구분, office.전화번호,
+        //        officeList.Count - 1);
+
+        //    officeCellController.cellDelegate = this;
+        //    officeCellController.transform.SetSiblingIndex(officeList.Count - 1);
+        //};
+
+        createPanelController.createDataAction = (office) =>
+        {
+            officeList.Add(office);
+
+            OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
+            officeCellController.SetData(office.사무소명,
+                office.영업구분, office.전화번호,
+                officeList.Count - 1);
+
+            officeCellController.cellDelegate = this;
+            officeCellController.transform.SetSiblingIndex(officeList.Count - 1);
+        };
+    }
+
+    public void saveData(Office office)
+    {
+        // Create Panel Controller에서 전달된 office 객체를 officeList에 추가
+        officeList.Add(office);           
+
+        // 리스트 갱신
+        reloadData();
+    }
+
+    private void reloadData()
+    {
+        // 모든 cell 지우기
+        foreach (Transform transform in content.GetComponentInChildren<Transform>()) 
+        {
+            Destroy(transform.gameObject);
+        }
+
+        // 다시 officeList의 값을 cell로 생성
+        for (int i = 0; i < officeList.Count; i++)
+        {
+            OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
+            officeCellController.SetData(officeList[i].사무소명,
+                officeList[i].영업구분, officeList[i].전화번호,
+                officeList.Count - 1);
+
+            officeCellController.cellDelegate = this;
+        }
     }
 }
