@@ -151,8 +151,7 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
         {
             OfficeCellController officeCellController = Instantiate(officeCellPrefab, content);
             officeCellController.SetData(officeList[i].사무소명,
-                officeList[i].영업구분, officeList[i].전화번호,
-                officeList.Count - 1);
+                officeList[i].영업구분, officeList[i].전화번호, i);
 
             officeCellController.cellDelegate = this;
         }
