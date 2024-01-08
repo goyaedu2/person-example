@@ -10,6 +10,7 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
     [SerializeField] private OfficeCellController officeCellPrefab;
     [SerializeField] private MoreButtonCellController moreButtonPrefab;
     [SerializeField] private DetailPanelController detailPanelPrefab;
+    [SerializeField] private CreatePanelController createPanelPrefab;
     [SerializeField] private Transform content;
     [SerializeField] private Transform canvas;
 
@@ -77,5 +78,13 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
     {
         DetailPanelController detailPanelController = Instantiate(detailPanelPrefab, canvas);
         detailPanelController.SetData(officeList[index]);
+    }
+
+    /// <summary>
+    /// + 버튼 눌렀을 때 호출되는 메서드
+    /// </summary>
+    public void OnClickAddButton()
+    {
+        CreatePanelController createPanelController = Instantiate(createPanelPrefab, canvas);
     }
 }
