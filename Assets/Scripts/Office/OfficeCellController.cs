@@ -37,3 +37,4 @@ public class OfficeCellController : MonoBehaviour
         cellDelegate.OnClickCell(this.index);
     }
 }
+    

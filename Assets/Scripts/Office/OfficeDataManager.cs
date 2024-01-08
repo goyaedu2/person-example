@@ -11,6 +11,7 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
     [SerializeField] private MoreButtonCellController moreButtonPrefab;
     [SerializeField] private DetailPanelController detailPanelPrefab;
     [SerializeField] private CreatePanelController createPanelPrefab;
+    [SerializeField] private UpdatePanelController updatePanelPrefab;
     [SerializeField] private Transform content;
     [SerializeField] private Transform canvas;
 
@@ -59,25 +60,37 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
                 // More Button 제거
                 if (previousMoreButton != null) Destroy(previousMoreButton);
 
-                // More Button 추가
+                // More Button 추가   
                 int currentTotalCount = officeData.perPage * (officeData.page - 1) + officeData.currentCount;
-
+                    
                 if (currentTotalCount < officeData.totalCount)
                 {
                     MoreButtonCellController moreButtonCellController = Instantiate(moreButtonPrefab, content);
                     moreButtonCellController.loadMoreData = () =>
                     {
-                        StartCoroutine(LoadData(officeData.page + 1, moreButtonCellController.gameObject));
+                        StartCoroutine(LoadData(officeData. page + 1, moreButtonCellController.gameObject));
                     };
                 }
             }
         }
     }
 
+    /// <summary>
+    /// Cell을 클릭했을 때 동작하는 메서드
+    /// </summary>
+    /// <param name="index">선택한 Cell의 Index</param>
     public void OnClickCell(int index)
-    {
-        DetailPanelController detailPanelController = Instantiate(detailPanelPrefab, canvas);
-        detailPanelController.SetData(officeList[index]);
+    {   
+        //DetailPanelController detailPanelController = Instantiate(detailPanelPrefab, canvas);
+        //detailPanelController.SetData(officeList[index]);
+
+        UpdatePanelController updatePanelController = Instantiate(updatePanelPrefab, canvas);
+        updatePanelController.SetData(officeList[index], index);
+        updatePanelController.updateData = (office, updateIndex) =>
+        {
+            officeList[updateIndex] = office;
+            reloadData();
+        };
     }
 
     /// <summary>

@@ -669,6 +669,7 @@ MonoBehaviour:
   moreButtonPrefab: {fileID: 6012318927262099160, guid: 155e6350d5ed8e84195a4381601bfe6b, type: 3}
   detailPanelPrefab: {fileID: 4975166248821115765, guid: 6e903e7df628dde49b5bae5d2cbbb932, type: 3}
   createPanelPrefab: {fileID: 308579913873112556, guid: 4eb493c7f9e118c46b05dfa9ffda655f, type: 3}
+  updatePanelPrefab: {fileID: 8956357923324601939, guid: 6f73d1838ffdfb24891e596d7c4ebe57, type: 3}
   content: {fileID: 1585954859}
   canvas: {fileID: 154548631}
 --- !u!4 &267049586
@@ -1618,7 +1619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991122756}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 267049585}
+        m_TargetAssemblyTypeName: OfficeDataManager, Assembly-CSharp
+        m_MethodName: OnClickAddButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991122756
 MonoBehaviour:
   m_ObjectHideFlags: 0
