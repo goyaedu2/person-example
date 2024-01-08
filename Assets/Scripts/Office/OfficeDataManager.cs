@@ -88,7 +88,7 @@ public class OfficeDataManager : MonoBehaviour, ICellDelegate
         CreatePanelController createPanelController = Instantiate(createPanelPrefab, canvas);
         
         //createPanelController.createData = new CreateData(saveData);
-
+            
         //createPanelController.createData = (office) =>
         //{
         //    officeList.Add(office);
