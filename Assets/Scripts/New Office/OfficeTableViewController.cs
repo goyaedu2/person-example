@@ -29,9 +29,12 @@ public class OfficeTableViewController : GOTableViewController
             cell = Instantiate(cellPrefab, content) as OfficeTableViewCell;
         }
 
-        
-
-        return null;
+        cell.Index = index;
+        cell.officeName.text = officeList[index].사무소명;
+        cell.businessType.text = officeList[index].영업구분;
+        cell.phoneNumber.text = officeList[index].전화번호;
+            
+        return cell;
     }
 
     IEnumerator LoadData()

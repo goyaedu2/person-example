@@ -194,7 +194,19 @@ MonoBehaviour:
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66172221}
+        m_TargetAssemblyTypeName: GOTableViewController, Assembly-CSharp
+        m_MethodName: OnValueChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &66172219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,9 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c594e0dfa4c33e4181829ba5e6bc783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 0}
+  cellPrefab: {fileID: -339590376303702304, guid: 651c26f85b712cf488b67fbe38ccc762, type: 3}
   content: {fileID: 1585954859}
-  serviceKey: 
+  serviceKey: xAluuAL0vskgBaI6tYQN9an2CquRrYAik%2B3ztczOtUm5KOKIvtG3zkBIg40Usdtfu50En663WHX%2BkiMMkMC6eQ%3D%3D
 --- !u!1 &92804492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1370,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1629605359
 GameObject:
   m_ObjectHideFlags: 0
