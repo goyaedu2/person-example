@@ -70,7 +70,7 @@ public abstract class GOTableViewController : MonoBehaviour
 
     public void OnValueChanged(Vector2 vector)
     {
-        Debug.Log($"Screen.height: {Screen.height}, content.localPosition.y: { content.localPosition.y }");
+        Debug.Log($"Screen.height: {Screen.height}, content.localPosition.y: {content.localPosition.y}");
 
         if ((cellLinkedList.Last.Value.Index < totalRows - 1) &&
             (content.localPosition.y + Screen.height > cellLinkedList.Last.Value.Index * cellHeight + cellHeight))
