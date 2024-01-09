@@ -9,7 +9,7 @@ public class OfficeTableViewController : GOTableViewController
 
     private List<Office> officeList = new List<Office>();
 
-    private void Start()
+    protected void Start()
     {
         StartCoroutine(LoadData());
     }
@@ -21,6 +21,15 @@ public class OfficeTableViewController : GOTableViewController
 
     protected override GOTableViewCell cellForRowAtIndex(int index)
     {
+        // Cell 객체 만들고 반환
+        OfficeTableViewCell cell = dequeueReuseableCell() as OfficeTableViewCell;
+
+        if (cell == null) 
+        {
+            cell = Instantiate(cellPrefab, content) as OfficeTableViewCell;
+        }
+
+        
 
         return null;
     }
@@ -51,6 +60,8 @@ public class OfficeTableViewController : GOTableViewController
                     officeList.Add(officeArray[i]);
                 }
             }
+
+            base.Start();
         }
     }
 }

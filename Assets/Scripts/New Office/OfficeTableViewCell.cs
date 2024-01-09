@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OfficeTableViewCell : GOTableViewCell
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TMP_Text officeName;
+    public TMP_Text businessType;
+    public TMP_Text phoneNumber;
 }

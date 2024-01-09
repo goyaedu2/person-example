@@ -23,7 +23,7 @@ public abstract class GOTableViewController : MonoBehaviour
     // 각 index의 Cell을 반환하는 메서드
     protected abstract GOTableViewCell cellForRowAtIndex(int index);
 
-    private void Start()
+    protected virtual void Start()
     {
         totalRows = this.numberOfRows();
         float screenHeight = Screen.height;
@@ -35,8 +35,24 @@ public abstract class GOTableViewController : MonoBehaviour
 
         // Content 크기 조정
         RectTransform contentTransform = content.GetComponent<RectTransform>();
-        contentTransform.sizeDelta = new Vector2(contentTransform.sizeDelta.x, totalRows * cellHeight);
+        contentTransform.sizeDelta = new Vector2(0, totalRows * cellHeight);
+    }
 
-
+    /// <summary>
+    /// 재사용이 가능한 Cell을 반환해주는 메서드
+    /// </summary>
+    /// <returns>재사용 Cell 혹은 null</returns>
+    protected GOTableViewCell dequeueReuseableCell()
+    {
+        if (reuseQueue.Count > 0)
+        {
+            GOTableViewCell cell = reuseQueue.Dequeue();
+            cell.gameObject.SetActive(true);
+            return cell;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
